@@ -1,0 +1,77 @@
+import turtle
+import random
+
+HEIGHT, WIDTH = 500, 500
+COLORS=[ "red", "green","blue", "yellow", "cyan", "orange" , "black", "purple" , "pink", "brown"]
+
+
+def count_player():
+    player = 0
+    while True:
+        answer = input("Enter a number of the turtle you want to play(2_10): ")
+        if answer.isdigit():
+            player = int(answer)
+        else:
+            print("Please enter a valid number")
+            continue
+
+        if 2<= player <= 10:
+            return player
+        else:
+            print("The number you entered is out of range! ")
+
+
+
+def race(colores):
+    turtules = create_turtles(colores)
+    while True:
+        for racer in turtules:
+            distance = random.randrange(1 , 20)
+            racer.forward(distance)
+            if check_winner(racer):
+                return colores[turtules.index(racer)]
+
+
+def check_winner(racer): 
+    x, y  = racer.pos()
+    if y >= HEIGHT //2 - 20:
+        return True
+    return False
+
+
+def create_turtles(colores):
+    spacingx =  WIDTH // (len(colores)+1)
+    turtles = []
+    for i , color in enumerate(colores):
+        racer = turtle.Turtle()
+        racer.color(color)
+        racer.shape("turtle")
+        racer.left(90)
+        racer.penup()
+        racer.setpos(-WIDTH//2 + (i + 1)* spacingx , -HEIGHT //2 + 20 )
+        # the reason of the i +1 is that we start from the zero in enumerate!
+        racer.pendown()
+        turtles.append(racer)
+    return turtles
+
+
+def init_turtle_screen():
+
+    screen = turtle.Screen()
+    screen.setup(WIDTH, HEIGHT)
+    screen.title("race game")
+
+
+def main ():
+    players = count_player()
+    init_turtle_screen()
+    random.shuffle(COLORS)  #change the order of the items in the list 
+    colors = COLORS[:players]
+    winner  = race(colors)
+    print(f"Congratulations! {winner} won!")
+
+
+
+
+if __name__ == "__main__":
+    main()
