@@ -1,0 +1,78 @@
+# 🐢 Turtle Race Game
+
+A fun and interactive turtle-racing game built using Python's `turtle` graphics library.  
+Players choose how many turtles (2–10) participate, each assigned a random color. The turtles race upward on the screen, and the winner is announced once one reaches the finish line.
+
+
+
+## 🚀 Features
+
+- Choose between **2 and 10 turtles**.
+- Randomized turtle colors each game.
+- Simple, clean, and interactive terminal input.
+- Graphical race animation using Python's built-in `turtle` module.
+- Automatically detects and announces the winning turtle.
+
+
+## 📦 Requirements
+
+This project works with **Python 3.x** and requires no external libraries except the standard library.
+
+Modules used:
+- `turtle`
+- `random`
+
+
+
+## ▶️ How to Run
+
+1. Make sure Python 3 is installed on your system.
+2. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/turtle-race-game.git
+cd turtle-race-game
+```
+```bash
+python turtle_race.py
+```
+3.Follow the on-screen prompt to choose the number of turtles.
+
+4.Watch the race and see the winner!
+
+
+### 🧠 How It Works
+
+- The program asks the user how many players (turtles) should race.
+
+- A turtle screen is initialized with the given height and width.
+
+- Turtles are placed evenly spaced at the bottom of the screen.
+
+- Each turtle moves a random distance each frame.
+
+- First turtle to reach the finish line wins.
+
+
+### 📁 Project Structure
+```bash
+turtle-race-game/
+│
+├── turtle_race.py      # Main game script
+└── README.md           # Project documentation
+```
+### 🛠️ Future Improvements
+
+- Add betting system for users to pick a turtle.
+
+- Add replay/restart functionality.
+
+- Add better graphics (finish line, track lanes, etc.).
+
+- Add sound effects for more immersion.
+
+
+### 📜License
+
+This project is open-source and available under the MIT License.
+Feel free to modify or use it for learning purposes.
